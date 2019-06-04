@@ -1,0 +1,22 @@
+
+.border-card{
+  border-radius: 5px;
+}
+
+.card-page{
+@extend .border-card;
+  width: 100%;
+  max-width: 20%;
+  display: block;
+  margin: auto;
+  box-shadow: 0 0 14px 0 rgba(93,114,116,0.25);
+  margin-top: 10%;
+}
+
+
+.card-principal{
+@extend .border-card;
+  height: 32rem;
+}
+
+
