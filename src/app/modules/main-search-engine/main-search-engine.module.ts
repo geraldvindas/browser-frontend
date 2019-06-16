@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import {MainSearchEngineComponent} from './main-search-engine.component';
-import {MainSearchEngineRoutingModule} from './main-search-engine-routing.module';
+import { MainSearchEngineComponent } from './main-search-engine.component';
+import { MainSearchEngineRoutingModule } from './main-search-engine-routing.module';
 
 @NgModule({
   declarations: [],

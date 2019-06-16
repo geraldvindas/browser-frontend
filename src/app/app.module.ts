@@ -11,6 +11,7 @@ import {MainSearchEngineModule} from './modules/main-search-engine/main-search-e
 import {SearchResultsRoutingModule} from './modules/search-results/search-results-routing.module';
 import {ResultRoutingModule} from './modules/result/result-routing.module';
 import {RouterModule} from '@angular/router';
+import {MatFormFieldModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import {RouterModule} from '@angular/router';
     MainSearchEngineModule,
     ResultRoutingModule,
     RouterModule,
-    SearchResultsRoutingModule
+    SearchResultsRoutingModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

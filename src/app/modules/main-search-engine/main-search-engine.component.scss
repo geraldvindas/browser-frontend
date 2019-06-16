@@ -4,17 +4,18 @@
 }
 
 .card-page{
-  height: 500px;
-  width: 700px;
-  display: block;
-  margin: auto;
   box-shadow: 0 0 14px 0 rgba(93,114,116,0.25);
-  margin-top: 10%;
+  display: block;
+  height: 500px;
+  margin: 10% auto auto;
+  width: 700px;
+  background-color: white;
 }
 
 .input-container{
   margin-top: 150px;
   position: absolute;
+  background-color: black;
 }
 
 
