@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainSearchEngineComponent implements OnInit {
 
+  query: string;
+
   constructor() { }
 
   ngOnInit() {
-  }
-
+   }
 }

@@ -12,6 +12,7 @@ import {SearchResultsRoutingModule} from './modules/search-results/search-result
 import {ResultRoutingModule} from './modules/result/result-routing.module';
 import {RouterModule} from '@angular/router';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatFormFieldModule, MatInputModule} from '@angular/material';
     RouterModule,
     SearchResultsRoutingModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

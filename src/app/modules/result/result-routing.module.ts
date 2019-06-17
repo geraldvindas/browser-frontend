@@ -4,7 +4,7 @@ import {ResultComponent} from './result.component';
 
 const routes: Routes = [
   {
-    path: 'search/:query',
+    path: 'search/:id',
     component: ResultComponent
   }
 ];
