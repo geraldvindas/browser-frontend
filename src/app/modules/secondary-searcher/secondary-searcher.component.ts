@@ -19,6 +19,7 @@ export class SecondarySearcherComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log('hola');
     this.loadResults();
   }
 
