@@ -25,7 +25,11 @@ export class SecondarySearcherComponent implements OnInit {
   loadQuery(): void {
     this.activatedRoute.params.subscribe(params => {
       const query = params.query;
-      console.log('QUERY=', params);
+      if (query) {
+        this.queryService.getResults(query).subscribe( result => {
+          console.log('Mensaje recuperado' , result);
+        });
+      }
     });
   }
 }
