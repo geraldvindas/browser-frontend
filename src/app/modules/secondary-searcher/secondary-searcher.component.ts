@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {QueryService} from '../../shared/services/query/query.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { QueryService } from '../../shared/services/query/query.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FileModel } from '../../core/models/file.model';
 
 @Component({
   selector: 'app-secondary-searcher',
@@ -10,16 +11,18 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class SecondarySearcherComponent implements OnInit {
 
 
+  resultFiles: FileModel[] = [];
+
   constructor(private queryService: QueryService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
 
   ngOnInit() {
-    this.loadQuery();
+    this.loadResults();
   }
 
-  loadQuery(): void {
+  loadResults(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = params.id;
       console.log('QUERY=', params);

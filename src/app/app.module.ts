@@ -11,6 +11,8 @@ import {RouterModule} from '@angular/router';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 import {SecondarySearcherRoutingModule} from './modules/secondary-searcher/secondary-searcher-routing.module';
+import {QueryService} from './shared/services/query/query.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import {SecondarySearcherRoutingModule} from './modules/secondary-searcher/secon
     SearchResultsRoutingModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QueryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
