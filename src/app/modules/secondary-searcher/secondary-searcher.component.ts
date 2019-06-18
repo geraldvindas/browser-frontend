@@ -19,10 +19,10 @@ export class SecondarySearcherComponent implements OnInit {
 
 
   ngOnInit() {
-    this.loadQuery();
+    this.loadResults();
   }
 
-  loadQuery(): void {
+  loadResults(): void {
     this.activatedRoute.params.subscribe(params => {
       const query = params.query;
       if (query) {

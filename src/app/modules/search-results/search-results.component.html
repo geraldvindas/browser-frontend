@@ -1,3 +1,16 @@
-<p>
-  search-results works!
-</p>
+<!--<div class="result-container">-->
+<!--    <h2> Titulo </h2>-->
+<!--</div>-->
+
+
+  <div *ngFor="let result of resultsMock">
+    <div class="card" [routerLink]="['/search/hola']">
+      <div class="card-header">
+        <h5 class="titulo" >{{result[0]}}</h5> <h5>{{result[1]}}</h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{result[2]}}</p>
+      </div>
+    </div>
+  </div>
+
