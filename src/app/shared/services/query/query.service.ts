@@ -15,8 +15,8 @@ export class QueryService {
   constructor(private http: HttpClient) { }
 
 
-  getResults(query): Observable<FileModel[]> {
-    return this.http.get<FileModel[]>(`${environment.urlServerBackend}/result/query/${query}`);
+  getResults(query): Observable<any> {
+    return this.http.get<any>(`${environment.urlServerBackend}/result/query/${query}`);
   }
 
 }
