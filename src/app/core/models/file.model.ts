@@ -1,3 +1,6 @@
 export class FileModel {
-  result: string;
+  nombreDocumento: string;
+  relevancia: number;
+  urlOriginal: string;
+  rutaCache: string;
 }

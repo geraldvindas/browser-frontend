@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {FileModel} from '../../../core/models/file.model';
 import {Observable} from 'rxjs';
 import {environment} from '../../../../environments/environment.prod';
+import {ResultModel} from '../../../core/models/result.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,10 @@ export class QueryService {
   constructor(private http: HttpClient) { }
 
 
-  getResults(query): Observable<FileModel[]> {
-    return this.http.get<FileModel[]>(`${environment.urlServerBackend}/result/query/${query}`);
+  getResults(query): Observable<ResultModel> {
+    return this.http.get<ResultModel>(`${environment.urlServerBackend}/result/query/${query}`);
   }
+
+
 
 }

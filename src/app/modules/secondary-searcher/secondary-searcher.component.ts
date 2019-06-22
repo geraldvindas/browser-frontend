@@ -12,6 +12,8 @@ export class SecondarySearcherComponent implements OnInit {
 
 
   resultFiles: FileModel[] = [];
+  time: number;
+  query: string;
 
   constructor(private queryService: QueryService,
               private router: Router,
@@ -24,12 +26,20 @@ export class SecondarySearcherComponent implements OnInit {
 
   loadResults(): void {
     this.activatedRoute.params.subscribe(params => {
-      const query = params.query;
-      if (query) {
-        this.queryService.getResults(query).subscribe( result => {
-          console.log('Mensaje recuperado' , result);
-        });
+      this.query = params.query;
+      if ( this.query) {
+        this.getResults(this.query);
       }
     });
+  }
+
+  getResults(query) {
+      this.queryService.getResults(query).subscribe( results => {
+        console.log('Mensaje recuperado' , results.tiempo);
+        this.time = results.tiempo;
+        this.resultFiles = results.resultados;
+
+        // this.resultFiles = results;
+      });
   }
 }

@@ -1,8 +1,9 @@
 <div class="card-body card-page">
   <img class="logo" src="../../../assets/BuscAranas.PNG"/>
   <div class="input-container" >
-    <input class="input-search" id="searchInput" #searchInput type="text">
+    <input class="input-search" id="searchInput" [(ngModel)]="query" #searchInput type="text">
   </div>
+  <button  type="submit" id="btn-iniciar" class="btn btn-primary button-primary button" (click)="getResults(query)"> Buscar </button>
 </div>
 <hr/>
-<app-search-results [results]="resultFiles"></app-search-results>
+<app-search-results [results]="resultFiles" [time]=time></app-search-results>

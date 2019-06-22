@@ -3,14 +3,21 @@
 <!--</div>-->
 
 
-  <div *ngFor="let result of resultsMock">
-    <div class="card" [routerLink]="['/search/hola']">
-      <div class="card-header">
-        <h5 class="titulo" >{{result[0]}}</h5> <h5>{{result[1]}}</h5>
+  <div *ngFor="let result of results">
+    <a href="{{result.urlOriginal}}" target="_blank">
+      <div class="card" >
+        <div class="card-header">
+          <h5 class="titulo" >{{result.nombreDocumento}}</h5> <h5>{{result.relevancia}}</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{result.urlOriginal}}</p>
+        </div>
       </div>
-      <div class="card-body">
-        <p class="card-text">{{result[2]}}</p>
-      </div>
-    </div>
+    </a>
+
   </div>
+<mat-paginator [length]="100"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
 
