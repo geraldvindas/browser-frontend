@@ -3,19 +3,26 @@
 <!--</div>-->
 
 
-  <div *ngFor="let result of results">
-    <a href="{{result.urlOriginal}}" target="_blank">
-      <div class="card" >
-        <div class="card-header">
-          <h5 class="titulo" >{{result.nombreDocumento}}</h5> <h5>{{result.relevancia}}</h5>
+<table mat-table class="table table-sm mat-elevation-z8" [dataSource]="dataSource" matSort >
+  <ng-container matColumnDef="resultados">
+    <th class="d-flex justify-content-center align-items-center" mat-header-cell *matHeaderCellDef mat-sort-header> Resultados </th>
+    <td class="d-flex justify-content-center align-items-center" mat-cell *matCellDef="let result">
+      <a href="{{result.urlOriginal}}" target="_blank">
+        <div class="card" >
+          <div class="card-header">
+            <h5 class="titulo" >{{result.nombreDocumento}}</h5> <h5>{{result.relevancia}}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{result.urlOriginal}}</p>
+          </div>
         </div>
-        <div class="card-body">
-          <p class="card-text">{{result.urlOriginal}}</p>
-        </div>
-      </div>
-    </a>
+      </a>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 
-  </div>
 <mat-paginator [length]="100"
                [pageSize]="10"
                [pageSizeOptions]="[5, 10, 25, 100]">
