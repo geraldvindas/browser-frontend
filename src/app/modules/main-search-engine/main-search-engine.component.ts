@@ -13,4 +13,10 @@ export class MainSearchEngineComponent implements OnInit {
 
   ngOnInit() {
    }
+
+  keyDownClick(event, searchValue) {
+    if (event.keyCode === 13) {
+      // router
+    }
+  }
 }

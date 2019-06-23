@@ -1,10 +1,10 @@
-.result-container{
+.general-data-container{
   display: inline;
   height: 500px;
-  margin: 10% auto auto;
+  margin-left: 80px;
   width: 700px;
   background-color: white;
-  border-color: transparent;
+  border-color: black;
 }
 
 .titulo {
@@ -29,4 +29,17 @@
 
   //border-color: black;
   box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+}
+
+table{
+  margin-left: 80px;
+  width: 90%;
+  border: black;
+
+  thead {
+    width: 0;
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
 }

@@ -10,7 +10,7 @@
 
 hr {
   // border-color: black;
-  margin: 40px auto 40px;
+  margin: 40px auto 5px;
   box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
 }
 
@@ -20,6 +20,11 @@ hr {
   width: 10%;
 }
 
+.icono_buscar {
+  display: inline;
+  width: 5%;
+}
+
 .input-container{
   background-color: #fff;
   border-radius: 30px;
@@ -27,28 +32,30 @@ hr {
   padding: 12px 22px;
   width: 35%;
   position: absolute;
-  display: inline;
+  display: inline-block;
   margin-left: 25px;
   margin-top: 33px;
 }
 
 .input-search{
+  display: inline;
   background-color: #FFFFFF;
   border: 0;
   color: black;
   font-family: Arial, serif;
   font-size: 15px;
-  width: 98%;
+  width: 95%;
   outline: none;
 }
 
 .button {
+  display: inline;
   background-color: #f5f5f5;
   border-color: lightgray;
   font-family: Arial, serif;
   color: black;
   font-size: 18px;
-  margin-top: 70px;
-  margin-left: 280px;
+  margin-top: 36px;
+  margin-left: 600px;
   width: 100px;
 }

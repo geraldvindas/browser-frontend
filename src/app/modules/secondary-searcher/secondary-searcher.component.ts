@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QueryService } from '../../shared/services/query/query.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FileModel } from '../../core/models/file.model';
+import {ShareResultService} from '../../shared/services/share-result/share-result.service';
 
 @Component({
   selector: 'app-secondary-searcher',
@@ -17,7 +18,8 @@ export class SecondarySearcherComponent implements OnInit {
 
   constructor(private queryService: QueryService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private shareService: ShareResultService) { }
 
 
   ngOnInit() {
@@ -34,12 +36,18 @@ export class SecondarySearcherComponent implements OnInit {
   }
 
   getResults(query) {
-      this.queryService.getResults(query).subscribe( results => {
-        console.log('Mensaje recuperado' , results.tiempo);
-        this.time = results.tiempo;
-        this.resultFiles = results.resultados;
+    console.log('CONSULTANDO...');
+      // this.queryService.getResults(query).subscribe( results => {
+      //   console.log('Mensaje recuperado' , results.tiempo);
+      //   this.time = results.tiempo;
+      //   this.resultFiles = results.resultados;
+      //   this.shareService.notifyChangeResults([this.resultFiles, this.time]);
+      // });
+  }
 
-        // this.resultFiles = results;
-      });
+  keyDownClick(event, searchValue) {
+    if (event.keyCode === 13) {
+      this.getResults(searchValue);
+    }
   }
 }

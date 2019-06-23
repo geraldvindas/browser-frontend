@@ -3,5 +3,6 @@
   <div class="input-container" >
     <input class="input-search" id="searchInput" [(ngModel)]="query" #searchInput type="text">
   </div>
-  <button  type="submit" id="btn-iniciar" class="btn btn-primary button-primary button" [routerLink]="['/search/', query]"> Buscar </button>
+  <button  type="submit" id="btn-iniciar" class="btn btn-primary button-primary button"
+           [routerLink]="['/search/', query]" (keydown)="keyDownClick($event, query)"> Buscar </button>
 </div>

@@ -22,6 +22,7 @@ import { QueryService } from './shared/services/query/query.service';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatPaginatorResult} from './modules/search-results/MatPaginatorResult';
+import {ShareResultService} from './shared/services/share-result/share-result.service';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {MatPaginatorResult} from './modules/search-results/MatPaginatorResult';
     MatTableModule
   ],
   providers: [QueryService,
+    ShareResultService,
     { provide: MatPaginatorIntl, useClass: MatPaginatorResult}],
   bootstrap: [AppComponent]
 })

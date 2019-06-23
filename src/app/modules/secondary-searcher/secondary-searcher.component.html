@@ -1,9 +1,9 @@
 <div class="card-body card-page">
   <img class="logo" src="../../../assets/logo_kumo.JPG"/>
   <div class="input-container" >
-    <input class="input-search" id="searchInput" [(ngModel)]="query" #searchInput type="text">
+    <input class="input-search" id="searchInput" [(ngModel)]="query" #searchInput type="text" (keydown)="keyDownClick($event, query)">
+    <img class="icono_buscar" src="../../../assets/search.svg" (click)="getResults(query)"/>
   </div>
-  <button  type="submit" id="btn-iniciar" class="btn btn-primary button-primary button" (click)="getResults(query)"> Buscar </button>
 </div>
 <hr/>
-<app-search-results [results]="resultFiles" [time]=time></app-search-results>
+<app-search-results></app-search-results>
