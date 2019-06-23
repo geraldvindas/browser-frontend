@@ -7,3 +7,7 @@
 </div>
 <hr/>
 <app-search-results></app-search-results>
+
+<div class="result-loading-indicator">
+  <mat-spinner *ngIf="resultFiles !== []"></mat-spinner>
+</div>
