@@ -10,12 +10,13 @@
           <h5 class="titulo" >{{result.nombreDocumento}}</h5> <h5>{{result.relevancia}}</h5>
         </div>
         <div class="card-body">
-          <p class="card-text">{{result.urlOriginal}}</p>
+          <p class="card-text">{{result.resumen}}</p>
         </div>
       </div>
     </a>
-
   </div>
+
+
 <mat-paginator [length]="100"
                [pageSize]="10"
                [pageSizeOptions]="[5, 10, 25, 100]">

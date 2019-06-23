@@ -3,4 +3,5 @@ export class FileModel {
   relevancia: number;
   urlOriginal: string;
   rutaCache: string;
+  resumen: string;
 }
