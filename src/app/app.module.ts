@@ -13,7 +13,7 @@ import {
   MatCheckboxModule,
   MatFormFieldModule,
   MatInputModule, MatPaginatorIntl,
-  MatPaginatorModule, MatSortModule,
+  MatPaginatorModule, MatProgressSpinnerModule, MatSortModule,
   MatTableModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
@@ -48,7 +48,8 @@ import {ShareResultService} from './shared/services/share-result/share-result.se
     MatPaginatorModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [QueryService,
     ShareResultService,

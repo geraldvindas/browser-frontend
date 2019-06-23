@@ -36,7 +36,8 @@ export class SecondarySearcherComponent implements OnInit {
   }
 
   getResults(query) {
-      this.queryService.getResults(query).subscribe( results => {
+    this.resultFiles = [];
+    this.queryService.getResults(query).subscribe( results => {
         console.log('Mensaje recuperado' , results.tiempo);
         this.time = results.tiempo;
         this.resultFiles = results.resultados;
