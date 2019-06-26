@@ -1,5 +1,5 @@
 
-.card-page{
+.card-page {
   display: inline;
   height: 500px;
   margin: 10% auto auto;
@@ -60,6 +60,9 @@ hr {
   width: 100px;
 }
 
-.result-loading-indicator {
-  position: absolute;
+.spinner {
+  height: 100px;
+  width: 100px;
+  margin-top: 15%;
+  margin-left: 45%;
 }

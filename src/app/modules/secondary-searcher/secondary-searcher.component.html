@@ -2,12 +2,11 @@
   <img class="logo" src="../../../assets/logo_kumo.JPG"/>
   <div class="input-container" >
     <input class="input-search" id="searchInput" [(ngModel)]="query" #searchInput type="text" (keydown)="keyDownClick($event, query)">
-    <img class="icono_buscar" src="../../../assets/search.svg" (click)="getResults(query)"/>
+    <img class="icono_buscar" src="../../../assets/search.svg" (click)="changeQuery(query)"/>
   </div>
 </div>
 <hr/>
-<app-search-results></app-search-results>
 
-<div class="result-loading-indicator">
-  <mat-spinner *ngIf="resultFiles !== []"></mat-spinner>
-</div>
+<div *ngIf="resultFiles.length === 0 && !haveResult" class="spinner-border text-primary spinner"></div>
+
+<app-search-results></app-search-results>

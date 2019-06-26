@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-search-engine',
@@ -9,14 +10,20 @@ export class MainSearchEngineComponent implements OnInit {
 
   query: string;
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
    }
 
-  keyDownClick(event, searchValue) {
+  getResults(query) {
+    if (query !== undefined) {
+      this.router.navigate([`../search/${query}`], {relativeTo: this.route});
+    }
+  }
+
+  keyDownClick(event, query) {
     if (event.keyCode === 13) {
-      // router
+      this.getResults(query);
     }
   }
 }

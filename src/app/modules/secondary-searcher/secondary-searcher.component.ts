@@ -15,14 +15,18 @@ export class SecondarySearcherComponent implements OnInit {
   resultFiles: FileModel[] = [];
   time: number;
   query: string;
+  haveResult: boolean;
 
   constructor(private queryService: QueryService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
-              private shareService: ShareResultService) { }
+              private shareService: ShareResultService,
+              private route: ActivatedRoute) { }
 
 
   ngOnInit() {
+    this.haveResult = false;
+    this.resultFiles = [];
     this.loadResults();
   }
 
@@ -35,19 +39,28 @@ export class SecondarySearcherComponent implements OnInit {
     });
   }
 
-  getResults(query) {
-    console.log('CONSULTANDO...');
-      // this.queryService.getResults(query).subscribe( results => {
-      //   console.log('Mensaje recuperado' , results.tiempo);
-      //   this.time = results.tiempo;
-      //   this.resultFiles = results.resultados;
-      //   this.shareService.notifyChangeResults([this.resultFiles, this.time]);
-      // });
+  changeQuery(query) {
+    this.router.navigate([`../${query}`], {relativeTo: this.route});
   }
 
-  keyDownClick(event, searchValue) {
+  getResults(query) {
+    this.time = null;
+    this.resultFiles = [];
+    this.haveResult = false;
+    this.shareService.notifyChangeResults([this.resultFiles, this.time]);
+    this.queryService.getResults(query).subscribe( results => {
+      this.time = results.tiempo;
+      if (results.resultados.length !== 0) {
+        this.resultFiles = results.resultados;
+      }
+      this.haveResult = true;
+      this.shareService.notifyChangeResults([this.resultFiles, this.time]);
+    });
+  }
+
+  keyDownClick(event, query) {
     if (event.keyCode === 13) {
-      this.getResults(searchValue);
+      this.changeQuery(query);
     }
   }
 }

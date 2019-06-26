@@ -20,6 +20,10 @@ export class QueryService {
     return this.http.get<ResultModel>(`${environment.urlServerBackend}/result/query/${query}`);
   }
 
+  getCacheDocument(document): Observable<string> {
+    return this.http.get<string>(`${environment.urlServerBackend}/result/cache/${document}`);
+  }
+
 
 
 }

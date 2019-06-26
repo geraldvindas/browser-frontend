@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatPaginatorResult} from './modules/search-results/MatPaginatorResult';
 import {ShareResultService} from './shared/services/share-result/share-result.service';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {ShareResultService} from './shared/services/share-result/share-result.se
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [QueryService,
     ShareResultService,
