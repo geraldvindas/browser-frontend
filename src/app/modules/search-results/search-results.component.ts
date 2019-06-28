@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileModel } from '../../core/models/file.model';
 import { ShareResultService } from '../../shared/services/share-result/share-result.service';
 import {QueryService} from "../../shared/services/query/query.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-results',
@@ -22,7 +23,9 @@ export class SearchResultsComponent implements OnInit {
     ' Morbi hendrerit ante metus, vel sodales est ornare vitae. Donec feugiat, enim non laoreet consectetur, ligula eros congue ex, ' +
     'ac imperdiet ex odio in urna.';
 
-  constructor(private shareService: ShareResultService, private queryService: QueryService) {
+  constructor(private shareService: ShareResultService,
+              private queryService: QueryService,
+              private router: Router) {
   }
 
   pageChanged(event) {
@@ -65,6 +68,9 @@ export class SearchResultsComponent implements OnInit {
   }
 
   getCacheDocument(document) {
-    return this.queryService.getCacheDocument(document);
+    // this.router.navigate([`http://localhost:5000/search/${document}`]);
+    // return this.queryService.getCacheDocument(document)
+    console.log('Reeemplazo', document.split('/').join('+'));
+    return `http://localhost:5000/result/cache/${document.split('/').join('+')}`;
   }
 }
