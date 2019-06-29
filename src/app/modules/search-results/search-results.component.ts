@@ -64,7 +64,7 @@ export class SearchResultsComponent implements OnInit {
   }
 
   replaceRoute(rutaCache: string) {
-    return rutaCache.replace('navegador-backend/Coleccion/', '');
+    return rutaCache.replace('navegador-backend/Coleccion/', '').replace('navegador-backend/ColeccionArana/', '');
   }
 
   getCacheDocument(document) {

@@ -19,10 +19,12 @@
                 </div>
               </a>
               <div class="card-body">
-                <a href="{{result.urlOriginal}}" target="_blank"> {{result.urlOriginal}} </a>
-                <p class="card-text">{{result.resumen}}</p>
-                <p class="card-text"><b>Relevancia: </b> {{result.relevancia}}</p>
-                <p class="card-text"><b>En caché: </b>
+                <p> <b>URL: </b>
+                  <a href="{{result.urlOriginal}}" target="_blank"> {{result.urlOriginal}} </a>
+                </p>
+<!--                <p class="card-text">{{result.resumen}}</p>-->
+                <p><b>Relevancia: </b> {{result.relevancia}}</p>
+                <p><b>En caché: </b>
                   <a href="{{getCacheDocument(result.rutaCache)}}" target="_blank">  {{replaceRoute(result.rutaCache)}} </a>
                 </p>
               </div>
